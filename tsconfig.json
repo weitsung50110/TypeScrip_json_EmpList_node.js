@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    /* Projects */
+
+    /* Language and Environment */
+    "target": "es2016",                 /* 指定生成的 JavaScript 版本為 ES2016，用於定義所產生的 JavaScript 文件中使用的語言特性和相容的庫聲明。 */
+
+    /* Modules */
+    "module": "commonjs",               /* 指定生成的模塊代碼，此處為 commonjs。 */
+
+    /* Emit */
+    "esModuleInterop": true,             /* 生成額外的 JavaScript 代碼以便支持導入 CommonJS 模塊，這將啟用 'allowSyntheticDefaultImports' 以保證類型相容性。 */
+    "forceConsistentCasingInFileNames": true, /* 確保導入時的大小寫一致性。 */
+
+    /* Type Checking */
+    "strict": true,                     /* 啟用所有嚴格的類型檢查選項。 */
+
+    /* Completeness */
+    "skipLibCheck": true,               /* 跳過對所有 .d.ts 檔案的類型檢查。 */
+    "outDir": "./public"                    /* 指定編譯後的 JavaScript 檔案輸出到 'dist' 資料夾。 */
+  },
+  "include": [
+    "*.ts"                         /* 包含的 TypeScript 檔案所在的資料夾和檔案匹配模式。 */
+  ],
+  "exclude": [
+    "TSapp.ts" // 要排除的 TypeScript 檔案
+  ]
+}
