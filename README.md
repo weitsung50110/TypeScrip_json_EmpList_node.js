@@ -64,3 +64,22 @@ data2.json因為有多companyName和location，因此修改如下。
                 foundEmployee = true; // 標記找到員工為真
             }
         });
+
+## 實作講解 Practical demonstration
+
+Main page <br />
+![](https://github.com/weitsung50110/Type_script_node.js/blob/main/github_imgs/0.png)
+
+interface 定義介面描述顯示名字的形狀 
+
+        interface NameDisplayer {
+          // 介面定義了一個方法 display，該方法接受一個字串參數 name，並且沒有返回值
+          display: (name: string) => void;
+          // 介面定義了另一個方法 clear，該方法不接受參數，並且沒有返回值
+          clear: () => void;
+        }
+    
+![](https://github.com/weitsung50110/Type_script_node.js/blob/main/github_imgs/1.png)
+
+fetch拿到json的console.log <br />
+![](https://github.com/weitsung50110/Type_script_node.js/blob/main/github_imgs/2.png)
