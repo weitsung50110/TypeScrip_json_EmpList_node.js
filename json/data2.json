@@ -1,6 +1,7 @@
 [
   {
     "companyName": "A company",
+    "location": "City A", 
     "employees": [
       {
         "id": 1,
@@ -24,21 +25,22 @@
   },
   {
     "companyName": "B company",
+    "location": "City B",
     "employees": [
       {
-        "id": 1,
+        "id": 4,
         "name": "Alex Brown",
         "position": "Frontend Developer",
         "department": "Engineering"
       },
       {
-        "id": 2,
+        "id": 5,
         "name": "Eva Green",
         "position": "Marketing Manager",
         "department": "Marketing"
       },
       {
-        "id": 3,
+        "id": 6,
         "name": "Max Wilson",
         "position": "Financial Analyst",
         "department": "Finance"

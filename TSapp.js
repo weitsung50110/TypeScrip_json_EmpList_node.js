@@ -9,7 +9,7 @@ const app = (0, express_1.default)();
 const port = 4000;
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.get('/getdata', (_req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'json/data.json'));
+    res.sendFile(path_1.default.join(__dirname, 'json/data2.json'));
 });
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

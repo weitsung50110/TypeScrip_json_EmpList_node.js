@@ -1,41 +1,79 @@
-// 等待DOM加載完成後執行
-document.addEventListener("DOMContentLoaded", function() {
-    const select = document.getElementById("employee-select") as HTMLSelectElement; // 選擇表單元素
-    const detailsContainer = document.getElementById("employee-details") as HTMLElement; // 員工詳細信息容器
+// 從DOMContentLoaded事件開始監聽
+document.addEventListener("DOMContentLoaded", () => {
+    //const companySelect: HTMLSelectElement = document.getElementById("company-select") as HTMLSelectElement;
+    
+    const select: HTMLSelectElement = document.getElementById("employee-select") as HTMLSelectElement;
+    // 獲取帶有ID為"employee-select"的HTMLSelectElement元素
+    
+    const detailsContainer: HTMLElement = document.getElementById("employee-details") as HTMLElement;
+    // 獲取帶有ID為"employee-details"的HTMLElement元素，用於顯示員工詳細信息
+    
+    let selectedCompany: any; // 儲存選定的公司信息
+    let selectedEmployee: any; // 儲存選定的員工信息
+    let foundEmployee: boolean = false; // 標記是否找到員工
 
     // 載入JSON數據
     fetch("getdata")
-        .then(response => { return response.json() }) // 將收到的回應轉換為JSON格式
-        .then((data: { employees: { id: number; name: string; position: string; department: string; }[] }) => {
-            data.employees.forEach(employee => { // 遍歷每個員工
-                const option = document.createElement("option"); // 創建一個選項
-                option.value = employee.id.toString(); // 設置選項的值為員工的ID
-                option.textContent = String(employee.id); // 設置選項的文本內容為員工的名字
-                select.appendChild(option); // 將選項添加到選擇表單中
-            });
+        .then(response => { 
+            // 檢查網路回應是否正常
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // 解析JSON數據 將收到的回應轉換為JSON格式
+        })
+        .then((data: any) => {
+            // 確認data是否為數組
+            if (Array.isArray(data)) {
+                data.forEach((company: any) => {
+                    // 檢查公司的employees屬性是否為數組
+                    if (Array.isArray(company.employees)) {
+                        company.employees.forEach((employee: any) => {
+                            // 創建並添加選項到下拉列表中
+                            const option: HTMLOptionElement = document.createElement("option");
+                            option.value = employee.id.toString();
+                            option.textContent = `${company.companyName} > ${employee.name}`;
+                            select.appendChild(option);
+                        });
+                    }
+                });
 
-            // 監聽選擇表單的更改事件
-            select.addEventListener("change", function(this: HTMLSelectElement) {
-                const selectedId = parseInt(this.value); // 獲取選擇的員工ID，將字串轉換為整數 123
-                const selectedEmployee = data.employees.find(emp => emp.id === selectedId); // 在數據中查找選擇的員工
+                select.addEventListener("change", function(this: HTMLSelectElement) {
+                    // 監聽下拉列表的更改事件
+                    const selectedId: number = parseInt(this.value);
 
-                if (selectedEmployee) { // 如果找到了選擇的員工
-                    // 將該員工的詳細信息顯示在詳細信息容器中
-                    detailsContainer.innerHTML = `
-                        <h2>Employee Details</h2>
-                        <p>ID: ${selectedEmployee.id}</p>
-                        <p>Name: ${selectedEmployee.name}</p>
-                        <p>Position: ${selectedEmployee.position}</p>
-                        <p>Department: ${selectedEmployee.department}</p>
-                    `;
-                } else {
-                    // 如果未找到選擇的員工，顯示提示信息
-                    detailsContainer.innerHTML = "<p>No employee selected</p>";
-                }
-            });
+                    data.forEach((company: any) => {
+                        // 查找選定的員工
+                        const employee = company.employees.find((emp: any) => emp.id === selectedId);
+                        if (employee) {
+                            // 如果找到員工，存儲所在公司和員工信息
+                            selectedCompany = company;
+                            selectedEmployee = employee;
+                            console.log("Company:", company);
+                            console.log("Employee:", employee);
+                            foundEmployee = true; // 標記找到員工為真
+                        }
+                    });
+
+                    if (foundEmployee) {
+                        // 如果找到員工，將員工詳細信息顯示在詳細信息容器中
+                        detailsContainer.innerHTML = `
+                            <h2>Employee Details</h2>
+                            <p>ID: ${selectedEmployee.id}</p>
+                            <p>Name: ${selectedEmployee.name}</p>
+                            <p>Position: ${selectedEmployee.position}</p>
+                            <p>Company: ${selectedCompany.companyName}</p>
+                            <p>Location: ${selectedCompany.location}</p>`;
+                    } else {
+                        // 如果未找到選擇的員工，顯示提示信息
+                        detailsContainer.innerHTML = "<p>No employee selected</p>";
+                    }
+                });
+            } else {
+                throw new Error('Data structure is not as expected');
+            }
         })
         .catch(error => {
-            // 處理發生的錯誤
+            // 處理錯誤情況
             console.error("Error fetching JSON:", error);
         });
 });
