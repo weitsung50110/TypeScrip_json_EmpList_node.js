@@ -1,4 +1,40 @@
 "use strict";
+// 將介面的形狀應用到名字顯示器
+let nameDisplayer = {
+    display: function (name) {
+        // 獲取要顯示名字的 HTML 元素
+        const nameDisplayElement = document.getElementById("nameDisplay");
+        // 確保取得了名字顯示的元素
+        if (nameDisplayElement) {
+            // 將輸入的名字顯示在網頁上
+            nameDisplayElement.innerText = `Hello, ${name}!`;
+        }
+    },
+    clear: function () {
+        // 清除名字顯示的 HTML 元素的內容
+        const nameDisplayElement = document.getElementById("nameDisplay");
+        if (nameDisplayElement) {
+            nameDisplayElement.innerText = '';
+        }
+    }
+};
+// 監聽按鈕點擊事件
+const showButton = document.getElementById("showButton");
+//當想要訪問可能為空（null 或 undefined）的屬性或調用可能不存在的方法時，可以使用 ? 來確保在變數為空時不會引發錯誤。
+showButton === null || showButton === void 0 ? void 0 : showButton.addEventListener("click", function () {
+    // 獲取輸入名字的文本框元素
+    const nameInput = document.getElementById("nameInput");
+    // 獲取輸入的名字
+    const enteredName = nameInput.value;
+    // 使用名字顯示器顯示輸入的名字
+    nameDisplayer.display(enteredName);
+});
+// 清除按鈕點擊事件
+const clearButton = document.getElementById("clearButton");
+clearButton === null || clearButton === void 0 ? void 0 : clearButton.addEventListener("click", function () {
+    // 清除名字顯示器的顯示
+    nameDisplayer.clear();
+});
 // 從DOMContentLoaded事件開始監聽
 document.addEventListener("DOMContentLoaded", () => {
     //const companySelect: HTMLSelectElement = document.getElementById("company-select") as HTMLSelectElement;
