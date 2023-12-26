@@ -1,0 +1,48 @@
+[
+  {
+    "companyName": "A company",
+    "employees": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "position": "Software Engineer",
+        "department": "Engineering"
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "position": "Product Manager",
+        "department": "Product"
+      },
+      {
+        "id": 3,
+        "name": "Alice Johnson",
+        "position": "Data Analyst",
+        "department": "Analytics"
+      }
+    ]
+  },
+  {
+    "companyName": "B company",
+    "employees": [
+      {
+        "id": 1,
+        "name": "Alex Brown",
+        "position": "Frontend Developer",
+        "department": "Engineering"
+      },
+      {
+        "id": 2,
+        "name": "Eva Green",
+        "position": "Marketing Manager",
+        "department": "Marketing"
+      },
+      {
+        "id": 3,
+        "name": "Max Wilson",
+        "position": "Financial Analyst",
+        "department": "Finance"
+      }
+    ]
+  }
+]
