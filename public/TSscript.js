@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         data.employees.forEach(employee => {
             const option = document.createElement("option"); // 創建一個選項
             option.value = employee.id.toString(); // 設置選項的值為員工的ID
-            option.textContent = employee.name; // 設置選項的文本內容為員工的名字
+            option.textContent = String(employee.id); // 設置選項的文本內容為員工的名字
             select.appendChild(option); // 將選項添加到選擇表單中
         });
         // 監聽選擇表單的更改事件
         select.addEventListener("change", function () {
-            const selectedId = parseInt(this.value); // 獲取選擇的員工ID
+            const selectedId = parseInt(this.value); // 獲取選擇的員工ID，將字串轉換為整數 123
             const selectedEmployee = data.employees.find(emp => emp.id === selectedId); // 在數據中查找選擇的員工
             if (selectedEmployee) { // 如果找到了選擇的員工
                 // 將該員工的詳細信息顯示在詳細信息容器中
