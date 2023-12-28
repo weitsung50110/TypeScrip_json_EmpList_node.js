@@ -1,20 +1,19 @@
-/* styles.css */
-
-/* Body styles */
+@charset "UTF-8";
+/* Body styles - 全局樣式 */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 20px;
   background-color: #f4f4f4;
 }
 
-/* Container styles */
+/* Container styles - 容器樣式 */
 .container {
   width: 80%;
   margin: 0 auto;
 }
 
-/* Select styles */
+/* Select styles - 選擇框樣式 */
 label {
   font-weight: bold;
 }
@@ -28,7 +27,7 @@ select {
   border-radius: 4px;
 }
 
-/* Details container styles */
+/* Details container styles - 詳細信息容器樣式 */
 #employee-details {
   border: 1px solid #ccc;
   padding: 5px;
@@ -38,26 +37,28 @@ select {
   margin-top: 5px;
 }
 
-/* Heading styles */
+/* Heading styles - 標題樣式 */
 h2 {
   font-size: 24px;
   margin-bottom: 15px;
 }
 
-/* Paragraph styles */
+/* Paragraph styles - 段落樣式 */
 p {
   margin-bottom: 10px;
 }
 
-/* Input and Button styles */
-input[type="text"],
+/* Input and Button styles - 輸入框和按鈕樣式 */
+input[type=text],
 button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: white;
   cursor: pointer;
   margin-bottom: 11px;
 }
 
 button:hover {
-  background-color: #45a049; /* Darker Green */
+  background-color: #45a049;
 }
+
+/*# sourceMappingURL=styles.css.map */
