@@ -1,5 +1,13 @@
+# Using TypeScript, Node.js, and JSON to implement an employee directory website.
+## 使用TypeScript、Node.js和JSON來實現一個員工目錄網站。
 
-- 專案結構樹狀圖<br />
+## 目錄Table of Contents
+- [執行指令](#執行指令)
+- [json檔案差別與寫法的不同](#json檔案差別與寫法的不同)
+- [實作講解 Practical demonstration](#實作講解-Practical-demonstration)
+- [SCSS](#SCSS)
+
+-專案結構樹狀圖<br />
 -TS_ajax <br />
   |- json <br />
   |  |- data.json <br />
@@ -83,3 +91,14 @@ interface 定義介面描述顯示名字的形狀
 
 fetch拿到json的console.log <br />
 ![](https://github.com/weitsung50110/Type_script_node.js/blob/main/github_imgs/2.png)
+
+## SCSS
+步驟 1: 安裝 SCSS 編譯器
+
+    npm install sass
+
+步驟 2: 撰寫 SCSS 文件
+
+步驟 3: 編譯 SCSS 文件為 CSS
+
+    npx sass public/styles.scss public/styles.css
