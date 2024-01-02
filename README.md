@@ -6,6 +6,7 @@
 - [json檔案差別與寫法的不同](#json檔案差別與寫法的不同)
 - [實作講解 Practical demonstration](#實作講解-Practical-demonstration)
 - [SCSS](#SCSS)
+- [bootstrap](#bootstrap)
 
 -專案結構樹狀圖<br />
 -TS_ajax <br />
@@ -102,3 +103,28 @@ fetch拿到json的console.log <br />
 步驟 3: 編譯 SCSS 文件為 CSS
 
     npx sass public/styles.scss public/styles.css
+
+## bootstrap
+1.  **`.container`**: 是 Bootstrap 提供的一個類別，用於將內容置於中心化的容器中。
+    
+2.  **`.mt-5`**: 是 Bootstrap 提供的一個類別，用於添加上邊距（margin-top）。`mt-5` 代表著上邊距為 5 個間距單位。
+    
+3.  **`.row`**: 用於定義 Bootstrap 的行（row）。
+    
+4.  **`.col-md-6`**: Bootstrap 的列（column）類別，表示在中等屏幕大小（medium，md）上佔據 6 格（Bootstrap 的 12 格網格系統）。這個 `col-md-6` 類別表示這個列將會佔據一半的寬度。
+    
+5.  **`.input-group`**: 這是 Bootstrap 的輸入組（input group），用於將輸入元素和按鈕放置在一個群組內。
+    
+6.  **`.mb-3`**: 表示底部邊距（margin-bottom）為 3 個間距單位。
+    
+7.  **`.form-control`**: 是 Bootstrap 提供的一個類別，用於設置表單控制元素的樣式，使其具有100%的寬度並且擁有基本的樣式。
+    
+8.  **`.btn`**: 是 Bootstrap 提供的一個類別，用於設置按鈕的樣式。
+    
+9.  **`.btn-primary`** 和 **`.btn-secondary`**: 是不同樣式的按鈕。`.btn-primary` 代表主要樣式的按鈕，`.btn-secondary` 則代表次要樣式的按鈕。
+    
+10.  **`<input type="text">`**: 是一個 HTML 輸入元素，被 Bootstrap 的 `.form-control` 類別所修飾，使其外觀更符合 Bootstrap 的風格。
+    
+11.  **`class="form-label"`** 是 Bootstrap 提供的類別。**`class="form-select"`** 是 Bootstrap 提供的類別，用於設置下拉式選單的樣式。
+    
+12.  **`<div>`、`<label>` 和 `<select>`**: 這些也是 HTML 元素，但在這裡被使用了 Bootstrap 的類別來賦予特定的樣式。
