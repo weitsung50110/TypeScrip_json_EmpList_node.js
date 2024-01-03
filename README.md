@@ -6,7 +6,7 @@
 - [json檔案差別與寫法的不同](#json檔案差別與寫法的不同)
 - [實作講解 Practical demonstration](#實作講解-Practical-demonstration)
 - [SCSS](#SCSS)
-- [bootstrap](#bootstrap)
+- [Bootstrap RWD](#Bootstrap-RWD)
 
 -專案結構樹狀圖<br />
 -TS_ajax <br />
@@ -104,7 +104,7 @@ fetch拿到json的console.log <br />
 
     npx sass public/styles.scss public/styles.css
 
-## bootstrap
+## Bootstrap RWD
 1.  **`.container`**: 是 Bootstrap 提供的一個類別，用於將內容置於中心化的容器中。
     
 2.  **`.mt-5`**: 是 Bootstrap 提供的一個類別，用於添加上邊距（margin-top）。`mt-5` 代表著上邊距為 5 個間距單位。
@@ -128,3 +128,20 @@ fetch拿到json的console.log <br />
 11.  **`class="form-label"`** 是 Bootstrap 提供的類別。**`class="form-select"`** 是 Bootstrap 提供的類別，用於設置下拉式選單的樣式。
     
 12.  **`<div>`、`<label>` 和 `<select>`**: 這些也是 HTML 元素，但在這裡被使用了 Bootstrap 的類別來賦予特定的樣式。
+
+在 Bootstrap 中，列（Column）的大小可以根據不同的裝置尺寸和視窗寬度進行調整。以下是 Bootstrap 中常用的列大小類別：
+
+*   **Extra small devices (<576px)**: `.col-`（自動佈局）, `.col-1`, `.col-2`, ..., `.col-12`
+*   **Small devices (≥576px)**: `.col-sm-`（自動佈局）, `.col-sm-1`, `.col-sm-2`, ..., `.col-sm-12`
+*   **Medium devices (≥768px)**: `.col-md-`（自動佈局）, `.col-md-1`, `.col-md-2`, ..., `.col-md-12`
+*   **Large devices (≥992px)**: `.col-lg-`（自動佈局）, `.col-lg-1`, `.col-lg-2`, ..., `.col-lg-12`
+*   **Extra large devices (≥1200px)**: `.col-xl-`（自動佈局）, `.col-xl-1`, `.col-xl-2`, ..., `.col-xl-12`
+
+`.col-` 是自動佈局，意味着該列會根據可用空間平均分佈。而 `.col-1`, `.col-2`, ..., `.col-12` 則指定具體的列大小。
+
+此外，Bootstrap 還提供了可讓列在不同大小的裝置上呈現不同大小的方法。
+
+本專案設定了medium和small的grid橫向格數。預設網頁row中有12格，<br/>
+當網頁為medium時，使用6格，當網頁為small時使用6格，當網頁小於small時，就讓bootsrap自動調整。
+
+    <div class="col-md-6 col-sm-6">
